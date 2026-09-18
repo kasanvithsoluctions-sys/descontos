@@ -1,4 +1,5 @@
-/** Reserved placement. Connect an approved ad provider only after configuring consent. */
+/** Disabled until requested by the operator. No network calls or third-party scripts. */
 export function AdSlot() {
- return <aside className="ad-slot container" aria-label="Espaço reservado para publicidade"><span>PUBLICIDADE</span><div>Espaço reservado para anúncio</div></aside>;
+  if (process.env.ADS_ENABLED !== 'true') return null;
+  return <aside className="ad-slot container" aria-label="Publicidade"><span>PUBLICIDADE</span></aside>;
 }

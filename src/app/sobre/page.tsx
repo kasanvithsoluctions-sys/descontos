@@ -1,3 +1,12 @@
 import Link from 'next/link';
-export const metadata = { title: 'Sobre', description: 'Conheça o Desconta, uma ferramenta gratuita para calcular descontos e acréscimos.', alternates: { canonical: '/sobre' } };
-export default function About() { return <main id="conteudo" className="container prose-page"><span className="eyebrow">MENOS CONTAS. MAIS ECONOMIA.</span><h1>Sobre o Desconta</h1><p>O Desconta facilita as contas do dia a dia. Você pode calcular o preço final de uma promoção, descobrir o percentual de desconto e simular um acréscimo em segundos.</p><h2>Simples desde o primeiro cálculo</h2><p>A ferramenta é gratuita, funciona no celular e no computador e não exige cadastro. Os valores são processados no seu navegador.</p><h2>Como calculamos</h2><p>Aplicamos o percentual sobre o preço original. Valores monetários são arredondados para centavos e percentuais são exibidos com até duas casas decimais. Regras específicas de lojas, frete e descontos sucessivos não são incluídos automaticamente.</p><Link className="text-link" href="/">Ir para a calculadora →</Link></main>; }
+import { pageMetadata } from '@/lib/seo';
+export const metadata = pageMetadata('Sobre o Desconta — Contas simples e transparentes', 'Conheça o Desconta e como suas ferramentas gratuitas calculam, apresentam resultados e respeitam a privacidade dos valores informados.', '/sobre');
+export default function About() {
+  return <main id="conteudo" className="container prose-page"><Link className="back-link" href="/">← Início</Link><span className="eyebrow">SOBRE O PROJETO</span><h1>Sobre o Desconta</h1>
+    <p>O Desconta reúne ferramentas para facilitar as contas do dia a dia. A primeira é a Calculadora de Desconto, que ajuda a comparar promoções, descobrir percentuais, simular acréscimos e encontrar o preço original.</p>
+    <h2>Simples desde o primeiro cálculo</h2><p>As ferramentas são gratuitas, funcionam no celular e no computador e não exigem cadastro. Os valores são processados no seu navegador.</p>
+    <h2>Como calculamos</h2><p>Usamos as fórmulas explicadas em cada ferramenta. Os preços são arredondados para centavos e os percentuais são exibidos com até duas casas decimais. Frete, taxas e condições de lojas não são incluídos automaticamente.</p>
+    <h2>Uma ferramenta de cada vez</h2><p>O catálogo lista apenas calculadoras que já podem ser usadas. Cada nova ferramenta deve ter uma função clara, exemplos e explicações próprias.</p>
+    <Link className="text-link" href="/calculadora-desconto">Usar a Calculadora de Desconto →</Link>
+  </main>;
+}
